@@ -12,4 +12,5 @@ public class Airport {
     private Long id;
     private String name;
     // Other airport details
+
 }
