@@ -13,7 +13,8 @@ class AirportApplicationTests {
 
 	Airline airline1 = new Airline(1,"WestJet", "WSJ");
 	Airport airport1 = new Airport(1,"St. John's INTL", "YYT", "St. John's, NL");
-	Airport airport2 = new Airport(2,"Gander INTL", "YQX", "Gander, NL" );	Gate gate1 = new Gate(1, "1A" ,airport1);
+	Airport airport2 = new Airport(2,"Gander INTL", "YQX", "Gander, NL" );
+	Gate gate1 = new Gate(1, "1A" ,airport1);
 	Gate gate2 = new Gate(2, "1B", airport2);
 
 	@Test
@@ -27,6 +28,11 @@ class AirportApplicationTests {
 
 		Assertions.assertEquals(1,airport1.getId());
 		Assertions.assertEquals("YYT", airport1.getAirportCode());
+	}
+
+	@Test
+	public void testGate() {
+		Assertions.assertEquals("1A", gate1.getGateNumber());
 	}
 
 	@Test
