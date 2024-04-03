@@ -1,9 +1,7 @@
 package com.keyin.airport.airport;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,15 +11,29 @@ public class AirportController {
     @Autowired
     private AirportService airportService;
 
-//    @GetMapping("/airports")
-//    public List<Airport> getAllAirports() {
-//        return airportService.getAllAirports();
-//    }
-
     @GetMapping("/airports")
-    public String getAllAirports() {
-        return "airports";
+    public List<Airport> getAllAirports() {
+        return airportService.getAllAirports();
     }
+
+    @GetMapping("/airports/{id}")
+    public Airport getAirportById(@PathVariable Long id) {
+        return airportService.getAirportById(id);
+    }
+
+    @PostMapping("/airports")
+    public Airport createAirport(@RequestBody Airport airport) {
+        return airportService.createAirport(airport);
+    }
+
+    @DeleteMapping("/airports/{id}")
+    public void deleteAirport(@PathVariable Long id) {
+        airportService.deleteAirport(id);
+    }
+
+
+
+
 
 
 }
