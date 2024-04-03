@@ -37,18 +37,22 @@ public class Flight {
 
     @JoinColumn
     @ManyToOne //Many flights can be associated with one gate
-    private Gate gate;
+    private Gate arrivalGate;
+
+    @JoinColumn
+    @ManyToOne //Many flights can be associated with one gate
+    private Gate departureGate;
+
 
     //Constructor methods
     public Flight() {
     }
 
-    public Flight(long id){
+    public Flight(long id) {
         this.id = id;
     }
 
-
-    public Flight(long id, Airline airline, Airport originAirport, Airport destinationAirport, String flightNumber, String departureTime, String arrivalTime, String flightStatus, Gate gate) {
+    public Flight(long id, Airline airline, Airport originAirport, Airport destinationAirport, String flightNumber, String departureTime, String arrivalTime, String flightStatus, Gate arrivalGate, Gate departureGate) {
         this.id = id;
         this.airline = airline;
         this.originAirport = originAirport;
@@ -57,7 +61,8 @@ public class Flight {
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
         this.flightStatus = flightStatus;
-        this.gate = gate;
+        this.arrivalGate = arrivalGate;
+        this.departureGate = departureGate;
     }
 
     public long getId() {
@@ -124,12 +129,19 @@ public class Flight {
         this.flightStatus = flightStatus;
     }
 
-    public Gate getGate() {
-        return gate;
+    public Gate getArrivalGate() {
+        return arrivalGate;
     }
 
-    public void setGate(Gate gate) {
-        this.gate = gate;
+    public void setArrivalGate(Gate arrivalGate) {
+        this.arrivalGate = arrivalGate;
     }
 
+    public Gate getDepartureGate() {
+        return departureGate;
+    }
+
+    public void setDepartureGate(Gate departureGate) {
+        this.departureGate = departureGate;
+    }
 }
