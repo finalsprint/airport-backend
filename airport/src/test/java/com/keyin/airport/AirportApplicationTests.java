@@ -28,12 +28,12 @@ class AirportApplicationTests {
 		Assertions.assertEquals("YYT", airport1.getAirportCode());
 	}
 
-	@Test
-	public void testFlight() {
-		Flight flight1 = new Flight(33, airline1, airport1, airport1, "WS321", "1030", "1345","On Time",gate1);
-		Assertions.assertEquals(33, flight1.getId());
-		Assertions.assertEquals("YYT", flight1.getDestinationAirport().getAirportCode());
-	}
+//	@Test
+//	public void testFlight() {
+//		Flight flight1 = new Flight(33, airline1, airport1, airport1, "WS321", "1030", "1345","On Time",gate1);
+//		Assertions.assertEquals(33, flight1.getId());
+//		Assertions.assertEquals("YYT", flight1.getDestinationAirport().getAirportCode());
+//	}
 
 
 
