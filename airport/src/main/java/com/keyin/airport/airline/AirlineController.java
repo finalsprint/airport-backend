@@ -1,9 +1,7 @@
 package com.keyin.airport.airline;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -15,13 +13,23 @@ public class AirlineController {
     private AirlineService airlineService;
 
     @GetMapping("/airlines")
-    public String getAllAirlines() {
-        return "airlines";
+    public List<Airline> getAllAirlines() {
+        return airlineService.getAllAirlines();
     }
-//    @GetMapping("/airlines")
-//    public List<Airline> getAllAirlines() {
-//        return airlineService.getAllAirlines();
-//    }
 
+    @GetMapping("/airlines/{id}")
+    public Airline getAirline(@PathVariable Long id) {
+        return airlineService.getAirline(id);
+    }
+
+    @PostMapping("/airlines")
+    public Airline createAirline(@RequestBody Airline airline) {
+        return airlineService.createAirline(airline);
+    }
+
+    @DeleteMapping("/airlines/{id}")
+    public void deleteAirline(@PathVariable Long id) {
+        airlineService.deleteAirline(id);
+    }
 
 }
