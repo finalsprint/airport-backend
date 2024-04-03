@@ -17,6 +17,13 @@ public class Airport {
     @Column
     private String location;
 
+    public Airport(long id, String name, String airportCode, String location) {
+        this.id = id;
+        this.name = name;
+        AirportCode = airportCode;
+        this.location = location;
+    }
+
     public long getId() {
         return id;
     }

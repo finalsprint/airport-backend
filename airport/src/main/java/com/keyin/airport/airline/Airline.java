@@ -14,6 +14,12 @@ public class Airline {
     @Column
     private String airlineCode;
 
+    public Airline(long id, String name, String airlineCode) {
+        this.id = id;
+        this.name = name;
+        this.airlineCode = airlineCode;
+    }
+
     public long getId() {
         return id;
     }
