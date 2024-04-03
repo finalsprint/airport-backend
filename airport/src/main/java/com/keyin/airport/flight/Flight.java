@@ -17,7 +17,7 @@ public class Flight {
 
     @JoinColumn
     @ManyToOne //Many flights can be associated with one airport
-    private Airport orginAirport; //Origin airport of the flight
+    private Airport originAirport; //Origin airport of the flight
 
     @JoinColumn
     @ManyToOne //Many flights can be associated with one airport
@@ -39,6 +39,23 @@ public class Flight {
     @ManyToOne //Many flights can be associated with one gate
     private Gate gate;
 
+    //Constructor methods
+    public Flight() {
+    }
+
+
+    public Flight(long id, Airline airline, Airport originAirport, Airport destinationAirport, String flightNumber, String departureTime, String arrivalTime, String flightStatus, Gate gate) {
+        this.id = id;
+        this.airline = airline;
+        this.originAirport = originAirport;
+        this.destinationAirport = destinationAirport;
+        this.flightNumber = flightNumber;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.flightStatus = flightStatus;
+        this.gate = gate;
+    }
+
     public long getId() {
         return id;
     }
@@ -55,12 +72,12 @@ public class Flight {
         this.airline = airline;
     }
 
-    public Airport getOrginAirport() {
-        return orginAirport;
+    public Airport getOriginAirport() {
+        return originAirport;
     }
 
-    public void setOrginAirport(Airport orginAirport) {
-        this.orginAirport = orginAirport;
+    public void setOriginAirport(Airport orginAirport) {
+        this.originAirport = orginAirport;
     }
 
     public Airport getDestinationAirport() {
@@ -110,4 +127,5 @@ public class Flight {
     public void setGate(Gate gate) {
         this.gate = gate;
     }
+
 }
