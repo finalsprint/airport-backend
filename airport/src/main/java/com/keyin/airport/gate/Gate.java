@@ -17,4 +17,28 @@ public class Gate {
     @JoinColumn
     @ManyToOne
     private Airport airportId;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getGateNumber() {
+        return gateNumber;
+    }
+
+    public void setGateNumber(String gateNumber) {
+        this.gateNumber = gateNumber;
+    }
+
+    public Airport getAirportId() {
+        return airportId;
+    }
+
+    public void setAirportId(Airport airportId) {
+        this.airportId = airportId;
+    }
 }
