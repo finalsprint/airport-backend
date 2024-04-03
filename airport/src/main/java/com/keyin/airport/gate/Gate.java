@@ -18,6 +18,9 @@ public class Gate {
     @ManyToOne
     private Airport airportId;
 
+    public Gate() {
+    }
+
     public Gate(long id, String gateNumber, Airport airportId) {
         this.id = id;
         this.gateNumber = gateNumber;

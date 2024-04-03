@@ -17,6 +17,9 @@ public class Airport {
     @Column
     private String location;
 
+    public Airport() {
+    }
+
     public Airport(long id, String name, String airportCode, String location) {
         this.id = id;
         this.name = name;

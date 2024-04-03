@@ -43,6 +43,10 @@ public class Flight {
     public Flight() {
     }
 
+    public Flight(long id){
+        this.id = id;
+    }
+
 
     public Flight(long id, Airline airline, Airport originAirport, Airport destinationAirport, String flightNumber, String departureTime, String arrivalTime, String flightStatus, Gate gate) {
         this.id = id;
