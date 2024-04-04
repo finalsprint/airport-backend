@@ -8,4 +8,6 @@ import java.util.List;
 @Repository
 public interface FlightRepository extends CrudRepository<Flight, Long> {
     List<Flight> findByOriginAirport_Id(Long id);
+
+    List<Flight> findByDestinationAirport_Id(Long id);
 }

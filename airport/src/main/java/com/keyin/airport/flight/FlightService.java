@@ -65,6 +65,10 @@ public class FlightService {
         return flightRepository.findByOriginAirport_Id(originAirportId);
     }
 
+    public List<Flight> getFlightByDestination(long destinationAirportId) {
+        return flightRepository.findByDestinationAirport_Id(destinationAirportId);
+    }
+
     public List<Flight> getAllFlights() {
         return (List<Flight>) flightRepository.findAll();
     }

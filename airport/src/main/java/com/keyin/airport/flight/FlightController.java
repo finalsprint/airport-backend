@@ -26,6 +26,11 @@ public class FlightController {
         return flightService.getFlightByOrigin(originAirportId);
     }
 
+    @GetMapping("/flights/destination/{destinationAirportId}")
+    public List<Flight> getFlightByDestination(@PathVariable("destinationAirportId") long destinationAirportId) {
+        return flightService.getFlightByDestination(destinationAirportId);
+    }
+
     @PostMapping("/flights")
     public Flight createFlight(@RequestBody Flight flight) {
         return flightService.createFlight(flight);
