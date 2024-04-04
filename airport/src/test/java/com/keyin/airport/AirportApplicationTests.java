@@ -42,6 +42,4 @@ class AirportApplicationTests {
 		Assertions.assertEquals("YQX", flight1.getDestinationAirport().getAirportCode());
 	}
 
-
-
 }
