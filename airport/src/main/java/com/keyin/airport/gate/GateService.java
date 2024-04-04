@@ -31,6 +31,10 @@ public class GateService {
         return gateRepository.save(gate);
     }
 
+    public List<Gate> getGatesByAirport(Long airportId) {
+        return gateRepository.findByAirportId_Id(airportId);
+    }
+
     public void deleteGate(Long id) {
         gateRepository.deleteById(id);
     }
