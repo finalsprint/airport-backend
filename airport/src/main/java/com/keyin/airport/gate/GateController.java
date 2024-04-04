@@ -21,6 +21,16 @@ public class GateController {
         return gateService.getGateById(id);
     }
 
+    @GetMapping("/gates/origin-airport/{airportId}")
+    public List<Gate> getGatesByOriginAirport(@PathVariable Long airportId) {
+        return gateService.getGatesByAirport(airportId);
+    }
+
+    @GetMapping("/gates/destination-airport/{airportId}")
+    public List<Gate> getGatesByDestinationAirport(@PathVariable Long airportId) {
+        return gateService.getGatesByAirport(airportId);
+    }
+
     @PostMapping("/gates")
     public Gate createGate(@RequestBody Gate gate) {
         return gateService.createGate(gate);
